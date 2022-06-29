@@ -2,7 +2,10 @@
 File: draw_line.py
 Name: AO Chuang
 -------------------------
-TODO:
+This program creates lines on an instance of GWindow class.
+    There is a circle indicating the user’s first click. A line appears
+    at the condition where the circle disappears as the user clicks
+    on the canvas for the second time.
 """
 
 from campy.graphics.gobjects import GOval, GLine
@@ -30,10 +33,7 @@ circle = GOval(SIZE, SIZE)
 
 def main():
     """
-    This program creates lines on an instance of GWindow class.
-    There is a circle indicating the user’s first click. A line appears
-    at the condition where the circle disappears as the user clicks
-    on the canvas for the second time.
+    Just operation this program, you can draw lines where your mouse clicked.
     """
     onmouseclicked(point_count)
 
