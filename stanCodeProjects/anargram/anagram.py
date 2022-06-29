@@ -1,6 +1,6 @@
 """
 File: anagram.py
-Name:
+Name: AO Chuang
 ----------------------------------
 This program recursively finds all the anagram(s)
 for the word input by user and terminates when the
@@ -115,21 +115,6 @@ def find_anagrams_helper(s, current_num, current_s, found_word):
                 current_num.pop()
 
     return found_word
-
-
-# def has_prefix(sub_s):
-#     """
-#     :param sub_s: str, current anagrams
-#     :return : True, while words start with sub_s are in dictionary
-#     """
-#     if len(sub_s) > 1:
-#         if sub_s[0:2] in DICTIONARY:
-#             for word in DICTIONARY[sub_s[0:2]]:
-#                 word = str(word)
-#                 if word.startswith(sub_s):
-#                     return True
-#             return False
-#     return True
 
 
 if __name__ == '__main__':
