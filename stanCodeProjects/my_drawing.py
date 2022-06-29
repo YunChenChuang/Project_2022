@@ -1,8 +1,9 @@
 """
-File: 
-Name:
+File: my_drawing.py
+Name: AO Chuang
 ----------------------
-TODO:
+This program is a funny practice to draw a picture by Circle, Rectangle, and Arch.
+Just processing it to see what I drew.
 """
 
 from campy.graphics.gobjects import GOval, GRect, GArc
@@ -19,9 +20,6 @@ window = GWindow(900, 500)
 
 
 def main():
-    """
-    TODO:
-    """
     sky = GRect(900, 600, x=0, y=0)
     sky.filled = True
     sky.color = 'midnightblue'
