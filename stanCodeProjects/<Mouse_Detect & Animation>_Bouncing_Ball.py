@@ -1,8 +1,6 @@
 """
 File: bouncing_ball.py
 Name: AO Chuang
--------------------------
-TODO:
 """
 
 from campy.graphics.gobjects import GOval
