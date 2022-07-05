@@ -15,49 +15,48 @@ import random
 
 
 def main():
-	"""
-	This program can create the random flip result,
-	and stop when the given continue number of flips was reached
-	"""
-	print("Let's flip a coin!")
-	num_run = int(input('Number of runs: '))  # int
+    """
+    Input:
+        num_run: int, goal of the number to be runs.
+    Output:
+        The result of random flip, which has reach the goal that entered by users.
 
-	num_continue = 0  # counting the number of continue in the random flips
-	str_flips = ''  # record the all the flip results
-	prior = ''  # record the prior result
-	same = 0  # counting the number of the continue flip result
+    Example 1:
+        num_run = 2
+        Result: 'THHTHH', which has 2 runs 'HH' & 'HH'.
 
-	while True:
+    Example 2:
+        num_run = 4
+        Result: "HTTTTTTHHHTTHH" , which has 4 runs 'TTTTTT' & 'HHH' & 'TT' & 'HH'.
+    """
+    print(f"Let's flip a coin!")
+    num_run = int(input('Number of runs: '))
 
-		if num_continue == num_run:  # finishing the loop when the goal number was reached
-			break
-		else:
-			flip = random_flip()  # 'flip' is the random result of flips
-			str_flips += flip  # record all the result of flip
-			if prior == flip:  # record as 'same' whe 'flip' == 'prior'
-				same += 1
-			else:
-				same = 0  # clean 'same'
-			if same == 1:  # record as continue only when 'same' == 1
-				num_continue += 1
-			prior = flip  # update 'prior'
+    flip_str = random_flip()
+    first_same = False
+    count = 0
 
-	print(str_flips)
+    while count < num_run:
+        flip = random_flip()
+        if flip_str[-1] == flip:
+            if not first_same:
+                count += 1
+                first_same = True
+        else:
+            first_same = False
+        flip_str += flip
+
+    print(flip_str)
 
 
 def random_flip():
-	"""
-	Creating the random result of flip
-	:return: str, the flip result 'T' or 'H'
-	"""
-	num = random.choice(range(2))
-	if num == 0:
-		return 'T'
-	elif num == 1:
-		return 'H'
+    """
+    Create the random result of flip.
+    :return: str, flip result 'H' or 'T'
+    """
+    num = random.choice(range(2))
+    return 'T' if num else 'H'
 
-
-###### DO NOT EDIT CODE BELOW THIS LINE ######
 
 if __name__ == "__main__":
-	main()
+    main()
